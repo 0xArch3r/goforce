@@ -127,7 +127,7 @@ results, err := client.Search(
 
 ## License and Acknowledgement
 
-This package is released under BSD license. Part of the code referenced the simple-salesforce
+This package is released under BSD license. Part of the code referenced the simpleforce
 (https://github.com/simpleorce/simpleforce) project.
 
 Contributions are welcome, cheers :-)
