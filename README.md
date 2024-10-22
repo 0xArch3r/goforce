@@ -130,4 +130,4 @@ results, err := client.Search(
 This package is released under BSD license. Part of the code referenced the simpleforce
 (https://github.com/simpleorce/simpleforce) project.
 
-Contributions are welcome, cheers :-)
+Contributions are welcome!
