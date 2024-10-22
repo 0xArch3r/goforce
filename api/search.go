@@ -37,11 +37,6 @@ func newSearchFunc(b Transport) Search {
 			return nil, err
 		}
 
-		if resp.IsError() {
-			err := types.ParseSalesforceError(resp.StatusCode, data)
-			return nil, err
-		}
-
 		res := &types.SearchResults{}
 		err = json.Unmarshal(data, res)
 		if err != nil {
@@ -76,7 +71,7 @@ type SearchRequest struct {
 // Do executes the request and returns response or error.
 func (r SearchRequest) Do(ctx context.Context, transport Transport) (*Response, error) {
 	method := http.MethodPost
-	path := "http:///parameterizedSearch"
+	path := "/parameterizedSearch"
 
 	payload, err := json.MarshalIndent(r, "", "  ")
 	if err != nil {

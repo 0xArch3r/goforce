@@ -61,7 +61,7 @@ func (r GetRequest) Do(ctx context.Context, transport Transport) (*Response, err
 
 	method = http.MethodGet
 
-	path = fmt.Sprintf("http:///sobjects/%v/%v", r.Object, r.ID)
+	path = fmt.Sprintf("/sobjects/%v/%v", r.Object, r.ID)
 
 	//params = make(map[string]string)
 

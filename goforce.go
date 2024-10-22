@@ -70,8 +70,8 @@ func NewClient(opts ...Option) (*Client, error) {
 // Perform delegates to Transport to execute a request and return a response.
 func (c *BaseClient) Perform(req *http.Request) (*api.Response, error) {
 	original_path := req.URL.Path
-
-	u := fmt.Sprintf("%v/services/data/v%v/%v", c.InstanceURL, c.ApiVersion, original_path)
+	query := req.URL.RawQuery
+	u := fmt.Sprintf("%v/services/data/v%v%v?%v", c.InstanceURL, c.ApiVersion, original_path, query)
 
 	url, err := url.Parse(u)
 	if err != nil {
